@@ -13,8 +13,9 @@ public class FI_from_API {
 //        fiAPI.predicate();
 //        fiAPI.supplier();
 //        fiAPI.consumer();
-        fiAPI.function();
-        
+//        fiAPI.function();
+        fiAPI.unaryBinaryOperator();
+
     }
 
     public void predicate() {
@@ -67,6 +68,12 @@ public class FI_from_API {
         System.out.println("BiFunction: " + biFn2.apply("William ", "Shakespeare"));
     }
 
+    public void unaryBinaryOperator() {
+        UnaryOperator<String> unaryOp = name -> "My name is " + name;
+        System.out.println("Unary operator: " + unaryOp.apply("Sean"));
 
+        BinaryOperator<String> binaryOp = (s1, s2) -> s1.concat(s2);
+        System.out.println("Binary operator: " + binaryOp.apply("William ", "Shakespeare"));
+    }
 
 }
