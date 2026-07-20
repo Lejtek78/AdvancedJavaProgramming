@@ -12,8 +12,9 @@ public class FI_from_API {
         FI_from_API fiAPI = new FI_from_API();
 //        fiAPI.predicate();
 //        fiAPI.supplier();
-        fiAPI.consumer();
-
+//        fiAPI.consumer();
+        fiAPI.function();
+        
     }
 
     public void predicate() {
@@ -54,5 +55,18 @@ public class FI_from_API {
         BiConsumer<String, String> mapPrint = (key, value) -> System.out.println(key + ": " + value);
         mapCapitalCities.forEach(mapPrint);
     }
+
+    public void function() {
+        Function<String, Integer> fn2 = s -> s.length();
+        System.out.println("Function: " + fn2.apply("Moscow"));
+
+        BiFunction<String, String, Integer> biFn = (s1, s2) -> s1.length() + s2.length();
+        System.out.println("BiFunction: " + biFn.apply("William", "Shakespeare"));
+        
+        BiFunction<String, String, String> biFn2 = (s1, s2) -> s1.concat(s2);
+        System.out.println("BiFunction: " + biFn2.apply("William ", "Shakespeare"));
+    }
+
+
 
 }
